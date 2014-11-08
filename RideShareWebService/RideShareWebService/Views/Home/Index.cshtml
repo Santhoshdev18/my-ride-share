@@ -1,0 +1,26 @@
+﻿<header>
+    <div class="content-wrapper">
+        <div class="float-left">
+            <p class="site-title">
+                <a href="~/">ASP.NET Web API</a></p>
+        </div>
+    </div>
+</header>
+<div id="body">
+    <ul id="users"></ul>
+</div>
+
+@section scripts{
+<script type="text/javascript">
+$(function()
+{
+        $.getJSON('/api/user', function(usersJsonPayload)
+        {
+            $(usersJsonPayload).each(function (i, item)
+            {
+                $('#users').append('<li>' + item.first_name + '</li>');
+            });
+        });
+});
+   </script>
+}
