@@ -42,10 +42,10 @@ namespace RideShareWebService.Controllers
         //    return new string[] { "value1", "value2" };
         //}
 
-        // POST api/user
-        public void Post([FromBody]string value)
-        {
-        }
+        //// POST api/user
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
         // PUT api/user/5
         public void Put(int id, [FromBody]string value)

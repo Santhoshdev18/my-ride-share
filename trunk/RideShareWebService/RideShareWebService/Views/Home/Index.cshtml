@@ -8,6 +8,37 @@
 </header>
 <div id="body">
     <ul id="users"></ul>
+
+
+    <form id="registerUserForm" method="post">
+<h3>Create a new User</h3>
+<p>
+    <label for="user_id">Contact Id:</label>
+    <input type="text" name="user_id" />
+</p>
+<p>
+    <label for="first_name">Contact Name:</label>
+    <input type="text" name="first_name" />
+</p>
+        <p>
+    <label for="last_name">last name:</label>
+    <input type="text" name="last_name" />
+</p>
+        <p>
+    <label for="gender">gender:</label>
+    <input type="text" name="gender" />
+</p>
+        <p>
+    <label for="password">password:</label>
+    <input type="text" name="password" />
+</p>
+        <p>
+    <label for="email">email:</label>
+    <input type="text" name="email" />
+</p>
+<input type="button" id="registerUser" value="Save" />
+</form>
+
 </div>
 
 @section scripts{
@@ -21,6 +52,18 @@ $(function()
                 $('#users').append('<li>' + item.first_name + '</li>');
             });
         });
+});
+
+
+
+$('#registerUser').click(function () {
+    $.post("api/user",
+          $("#registerUserForm").serialize(),
+          function (value) {
+              $('#users').append('<li>' + value.first_name + '</li>');
+          },
+          "json"
+    );
 });
    </script>
 }
