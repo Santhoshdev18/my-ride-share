@@ -25,7 +25,7 @@ namespace RideShareWebService.DAL
                 }
             }
         }
-
+        // comm
         public List<User> GetAllUsers()
         {
             var ctx = HttpContext.Current;
@@ -44,12 +44,12 @@ namespace RideShareWebService.DAL
         {
             var ctx = HttpContext.Current;
 
-            if (ctx != null)
-            {
+            //if (ctx != null)
+            //{
                 try
                 {
                     // add information to the cache
-                    var currentData = ((User[])ctx.Cache[CacheKey]).ToList();
+                    var currentData = ((List<User>)ctx.Cache[CacheKey]).ToList();
                     currentData.Add(user);
                     ctx.Cache[CacheKey] = currentData.ToArray();
 
@@ -64,7 +64,28 @@ namespace RideShareWebService.DAL
                     Console.WriteLine(ex.ToString());
                     return false;
                 }
-            }
+           // }
+            //else
+            //{
+            //    try
+            //    {
+            //        // add information to the cache
+            //        var currentData = ((User[])ctx.Cache[CacheKey]).ToList();
+            //        currentData.Add(user);
+            //        ctx.Cache[CacheKey] = currentData.ToArray();
+
+            //        // add data to the database
+            //        db.Users.Add(user);
+            //        db.SaveChanges();
+
+            //        return true;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine(ex.ToString());
+            //        return false;
+            //    }
+            //}
 
             return false;
         }
