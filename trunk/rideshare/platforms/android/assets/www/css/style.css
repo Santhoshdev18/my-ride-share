@@ -1,0 +1,7 @@
+/* Empty. Add your own CSS if you like */
+.lightblue {
+	background-color: lightblue;
+}
+.styled-input {
+	border:1px inset lightblue;
+}
