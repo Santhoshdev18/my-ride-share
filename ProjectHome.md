@@ -1,0 +1,1 @@
+The Ride Share project is a mobile application of a car pooling system that provides a communication method between car owners and passengers and allow them to share a transportation method in a common route.
